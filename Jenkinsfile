@@ -24,7 +24,7 @@ pipeline  {
         }
 		stage ('Copy Artifact to Nexus Job'){
             steps {
-                sh 'cp /var/lib/jenkins/workspace/vprofile-pipeline/target/vprofile-v4.1.war /var/lib/jenkins/workspace/vprofile-nexus-versioning/vprofile-v4.1.war'
+                sh 'cp /opt/jenkins_node/workspace/vprofile-pipeline/target/vprofile-v1.war /var/lib/jenkins/workspace/vprofile-nexus-versioning/vprofile-v1.war'
             }
             post {
                 success {
@@ -40,7 +40,7 @@ pipeline  {
 		
         stage ('Copy Artifact to Staging Deploy Job'){
             steps {
-                sh 'cp /var/lib/jenkins/workspace/vprofile-pipeline/target/vprofile-v4.1.war /var/lib/jenkins/workspace/vprofile-deploy-to-staging/vprofile-v4.1.war'
+                sh 'cp /opt/jenkins_node/workspace/vprofile-pipeline/target/vprofile-v1.war /var/lib/jenkins/workspace/vprofile-deploy-to-staging/vprofile-v1.war'
             }
             post {
                 success {
